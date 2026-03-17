@@ -1,9 +1,15 @@
 const meals=[];
+const cache={};
+const API_URL="https://api.calorieninjas.com/v1/nutrition?query=";
+const API_KEY="cVcORDzD3cL0RBjlZqkQMw==FRF7eQBvDEmMAzxI";
 
 
-function addMeal(){
-    const foodInput=document.querySelector("#food");
-    const quantityInput=document.querySelector("#quantity");
+
+
+async function addMeal(){
+    const foodInput=document.getElementById("food");
+    const quantityInput=document.getElementById("quantity");
+    const mealtime=document.getElementById("mealtime").value;
 
     const food=foodInput.value.trim();
     const quanity=quantityInput.value.trim();
@@ -12,10 +18,17 @@ function addMeal(){
         alert("Please enter all fields");
         return;
     }
+    const query= `${food} ${quanity}`;
 
+    const nutrition=await getCalories(query);
     const meal={
         food, 
-        quanity
+        quanity,
+        mealtime,
+        calories: nutrition.calories,
+        protein: nutrition.protein,
+        carbs : nutrition.carbs,
+        fat: nutrition.fat
     };
 
     meals.push(meal);
@@ -27,24 +40,69 @@ function addMeal(){
 
 function rendermeals(){
 
-    
+    document.getElementById("breakfastcontainer").innerHTML="";
+    document.getElementById("lunchcontainer").innerHTML="";
+    document.getElementById("snackcontainer").innerHTML="";
+    document.getElementById("dinnercontainer").innerHTML="";
 
-    const list=document.querySelector("#mealslist");
 
-    list.innerHTML="";
+    let total=0;
+
+    let b=0,l=0,s=0,d=0;
+
+
+
     meals.forEach((meal,index)=>{
-        const li=document.createElement("li");
-        li.innerHTML= `${meal.food} - ${meal.quanity} <button class="delete" data-index="${index}">❌</button>`;
-        
-        const delbtn=li.querySelector(".delete");
+        const card=document.createElement("div");
+        card.classList.add("mealcard");
 
-        delbtn.addEventListener("click",()=>{
+        card.innerHTML=`
+        <strong>${meal.food}</strong> (${meal.quanity})<br>
+        🔥 ${meal.calories} kcal <br>
+        Protein: ${meal.protein}g <br>
+        Carbs: ${meal.carbs}g <br>
+        Fat: ${meal.fat}g <br>
+        <button class="delete">Delete</button>
+        `;
+
+        //delete btn
+        card.querySelector(".delete").addEventListener("click",()=>{
             deleteMeal(index);
+        });
 
-        })
+        //add calories
+        total+=meal.calories;
+
+
+        if(meal.mealtime=="Breakfast"){
+            document.getElementById("breakfastcontainer").appendChild(card);
+            b+=meal.calories;
+        }
 
         
-        list.appendChild(li);
+        if(meal.mealtime=="Lunch"){
+            document.getElementById("lunchcontainer").appendChild(card);
+            l+=meal.calories;  
+        }
+
+        if(meal.mealtime=="Evening Snacks"){
+            document.getElementById("snackcontainer").appendChild(card);
+            s+=meal.calories;
+        }
+
+        if(meal.mealtime=="Dinner"){
+            document.getElementById("dinnercontainer").appendChild(card);
+            d+=meal.calories;
+        }
+        
+        
+        document.getElementById("totalcalories").innerText=total + "kcal";
+        document.getElementById("breakfastcalories").innerText=b;
+        document.getElementById("lunchcalories").innerText=l;
+        document.getElementById("snackcalories").innerText=s;
+        document.getElementById("dinnercalories").innerText=d;
+        
+
     })
 
 
@@ -63,4 +121,43 @@ addbtn.addEventListener("click",addMeal);
 
 
 
+
+//Function for API call
+
+
+async function getCalories(query){
+    if(cache[query]){
+        console.log("From cache : ");
+        return cache[query];
+    }
+
+    try{
+        const res=await axios.get(API_URL+query,{
+            headers: {
+                "X-Api-Key": API_KEY
+            }
+        });
+
+        const item=res.data.items[0];
+
+        const nutrition={
+            calories: item?.calories || 0,
+            protein: item?.protein_g || 0,
+            carbs: item?.carbohydrates_total_g || 0,
+            fat: item?.fat_total_g || 0,
+        }
+        cache[query]=nutrition;
+        return nutrition;
+    }
+
+    catch(err){
+        console.log(err);
+        return {
+            calories:0,
+            protein:0,
+            carbs: 0,
+            fat: 0
+        };
+    }
+}
 
