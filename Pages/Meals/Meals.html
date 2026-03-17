@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meals-Fitlytics</title>
+    <link rel="stylesheet" href="Meals.css">
+    <link rel="stylesheet" href="../Shared/layout.css">
+</head>
+<body>
+
+
+    <div class="dashboard">
+        <div class=" sidebar">
+
+            <h2>Fitlytics</h2>
+
+            <ul>
+                <li onclick="goTo('Dashboard')">Dashboard</li>
+                <li class="active">Meals</li>
+                <li onclick="goTo('Workouts')">Workouts</li>
+                <li onclick="goTo('Progress')">Progress</li>
+                <li onclick="logout()">Logout</li>
+            </ul>
+
+        </div>
+
+        <div class="main">
+
+            <h1>Meals</h1>
+            <div class="addmeals">
+
+                <input type="text" id="food" placeholder="Dish Name (e.g. Rice)">
+                <input type="text" id="quantity" placeholder="Quantity (e.g. 200g)">
+
+                <button onclick="addMeal()">Add Meal</button>
+            </div>
+
+            <div class="mealcontainer">
+                <h2>Today's Meals</h2>
+
+                <ul id="mealslist">
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="Meals.js"></script>
+</body>
+</html>
