@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker Dashboard</title>
+    <link rel="stylesheet" href="DashBoard.css">
+</head>
+<body>
+    
+    <div class="dashboard">
+
+        <!--SideBar-->
+        <div class="sidebar">
+
+            <h2>Fitness Tracker</h2>
+            <ul>
+                <li>Dashboard</li>
+                <li>Meals</li>
+                <li>Workouts</li>
+                <li>Progress</li>
+                <li>Logout</li>
+            </ul>
+            
+        </div>
+
+         <!--Main Content-->
+        
+        <div class="main">
+            <h1>Dashboard</h1>
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Calories Today</h3>
+                    <p id="caloriestoday">1450 kcal</p>
+                </div>
+
+
+                <div class="card">
+                    <h3>Calories Burned</h3>
+                    <p id="caloriesburned">600 kcal</p>
+                </div>
+
+
+                <div class="card">
+                    <h3>Goal Progress</h3>
+                    <p>75%</p>
+                </div>
+
+            </div>
+
+            <div class="sections">
+
+
+                <div class="section">
+                    <h2>Today's Meals</h2>
+                <ul id="mealslist">
+                    <li>Rice - 200 kcal</li>
+                    <li>Dal - 250 kcal</li>
+                </ul>
+            
+                </div>
+
+
+
+                <div class="section">
+                    <h2>Today's Workout</h2>
+                    <ul id="workoutslist">
+                        <li>Running - 300 kcal</li>
+                        <li>Bench Press - 350 kcal</li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <script src="DashBoard.js"></script>
+</body>
+</html>
