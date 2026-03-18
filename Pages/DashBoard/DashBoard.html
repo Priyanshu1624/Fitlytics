@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Tracker Dashboard</title>
+    <title>Fitlytics-Dashboard</title>
     <link rel="stylesheet" href="DashBoard.css">
     <link rel="stylesheet" href="../Shared/layout.css">
 </head>
@@ -16,11 +16,11 @@
 
             <h2>Fitlytics</h2>
             <ul>
-                <li>Dashboard</li>
-                <li>Meals</li>
-                <li>Workouts</li>
-                <li>Progress</li>
-                <li>Logout</li>
+                <li class="active" id="dashboardbtn">Dashboard</li>
+                <li id="mealbtn">Meals</li>
+                <li id="workoutsbtn">Workouts</li>
+                <li >Progress</li>
+                <li id="logoutbtn">Logout</li>
             </ul>
             
         </div>
@@ -78,5 +78,6 @@
         </div>
     </div>
     <script src="DashBoard.js"></script>
+    <script src="../Shared/navigation.js"></script>
 </body>
 </html>

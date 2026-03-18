@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitlytics - Workouts</title>
+    <link rel="stylesheet" href="workout.css">
+    <link rel="stylesheet" href="../Shared/layout.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class=" sidebar">
+
+            <h2>Fitlytics</h2>
+
+            <ul>
+                <li id="dashboardbtn">Dashboard</li>
+                <li id="mealbtn">Meals</li>
+                <li class="active" id="workoutsbtn">Workouts</li>
+                <li >Progress</li>
+                <li id="logoutbtn">Logout</li>
+            </ul>
+
+        </div>
+
+        <div class="main">
+
+            <h1>Workouts</h1>
+            <div class="addworkout">
+                <input type="text" id="workout" placeholder="Workout (e.g. Running)">
+                <input type="number" id="duration" placeholder="Duration (minutes)">
+                <button id="addworkout">Add Workout</button>
+            
+            </div>
+
+            <div class="summary">
+
+                <h2>Total Calories Burned</h2>
+                <p id="totalburn">0 kcal</p>
+            </div>
+
+            <div id="workoutcontainer" class="workoutcontainer"></div>
+        </div>
+    </div>
+    <script src="../Shared/navigation.js"></script>
+    <script src="workout.js"></script>
+</body>
+</html>

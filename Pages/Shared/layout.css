@@ -1,3 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .dashboard{
     display: flex;
     height: 100vh;
@@ -7,13 +14,17 @@
 .sidebar{
     width: 220px;
     min-width: 220px;
-    background: #111827;
-    color: white;
+    background: linear-gradient(180deg, orange, red);
+    
     padding: 20px;
 }
 
 
 .sidebar h2{
+    color: white;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
     margin-bottom: 30px;
 }
 
@@ -23,17 +34,26 @@
 }
 
 .sidebar li{
+     color: rgba(255, 255, 255, 0.85);
     padding: 12px;
     cursor: pointer;
     border-radius: 5px;
+    transition: 0.2s;
 }
 .sidebar li:hover{
 
     background: rgba(255, 255, 255, 0.1);
-    padding-left: 5px;
-    transition: 0.2s
+    transform: translateY(5px);
+    
 }
 
+
+.sidebar .active{
+    background: rgba(255 ,255,255,0.2);
+    border-left: 3px solid white;
+    color: white;
+     
+}
 .main{
     flex: 1;
     padding: 30px;
@@ -42,3 +62,4 @@
     flex-direction: column;
     gap: 25px;
 }
+

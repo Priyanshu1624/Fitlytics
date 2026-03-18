@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meals-Fitlytics</title>
+    <title>Fitlytics-Meals</title>
     <link rel="stylesheet" href="Meals.css">
     <link rel="stylesheet" href="../Shared/layout.css">
 </head>
@@ -16,11 +16,11 @@
             <h2>Fitlytics</h2>
 
             <ul>
-                <li onclick="goTo('Dashboard')">Dashboard</li>
-                <li class="active">Meals</li>
-                <li onclick="goTo('Workouts')">Workouts</li>
-                <li onclick="goTo('Progress')">Progress</li>
-                <li onclick="logout()">Logout</li>
+                <li id="dashboardbtn">Dashboard</li>
+                <li class="active" id="mealbtn">Meals</li>
+                <li id="workoutsbtn">Workouts</li>
+                <li >Progress</li>
+                <li id="logoutbtn">Logout</li>
             </ul>
 
         </div>
@@ -45,7 +45,10 @@
             <!--Summary-->
             <div class="summary">
                 <h2>Total Calories</h2>
-                <p id="totalcalories">0 kcal</p>
+                <p id="totalcalories">Total Calories : 0 kcal</p>
+                <p id="totalprotein">Total Protein : 0 g</p>
+                <p id="totalcarbs">Total Carbohydrates : 0 g</p>
+                <p id="totalfats">Total Fats : 0 g</p>
             </div>
 
             <!--Sections-->
@@ -76,6 +79,7 @@
     </div>
     <script src="Meals.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../Shared/navigation.js"></script>
 </body>
 </html>
 

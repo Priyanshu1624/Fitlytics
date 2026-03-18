@@ -46,10 +46,20 @@ function rendermeals(){
     document.getElementById("dinnercontainer").innerHTML="";
 
 
+     document.getElementById("totalcalories").innerText="Total Calories : "+ 0 + " kcal";
+    document.getElementById("totalprotein").innerText="Total Protein : "+ 0 + " g";
+    document.getElementById("totalcarbs").innerText="Total Carbohydrates : "+ 0 + " g";
+    document.getElementById("totalfats").innerText="Total Fats : "+ 0 + " g";
+    document.getElementById("breakfastcalories").innerText="0";
+    document.getElementById("lunchcalories").innerText="0";
+    document.getElementById("snackcalories").innerText="0";
+    document.getElementById("dinnercalories").innerText="0";
+
+
     let total=0;
 
     let b=0,l=0,s=0,d=0;
-
+    let p=0,c=0,f=0;
 
 
     meals.forEach((meal,index)=>{
@@ -70,9 +80,11 @@ function rendermeals(){
             deleteMeal(index);
         });
 
-        //add calories
+        //add totals
         total+=meal.calories;
-
+        p+=meal.protein;
+        c+=meal.carbs;
+        f+=meal.fat;
 
         if(meal.mealtime=="Breakfast"){
             document.getElementById("breakfastcontainer").appendChild(card);
@@ -94,9 +106,13 @@ function rendermeals(){
             document.getElementById("dinnercontainer").appendChild(card);
             d+=meal.calories;
         }
+        ;
         
         
-        document.getElementById("totalcalories").innerText=total + "kcal";
+        document.getElementById("totalcalories").innerText="Total Calories : "+ total.toFixed(1) + " kcal";
+        document.getElementById("totalprotein").innerText="Total Protein : "+ p.toFixed(1) + " g";
+        document.getElementById("totalcarbs").innerText="Total Carbohydrates : "+ c.toFixed(1) + " g";
+        document.getElementById("totalfats").innerText="Total Fats : "+ f.toFixed(1) + " g";
         document.getElementById("breakfastcalories").innerText=b;
         document.getElementById("lunchcalories").innerText=l;
         document.getElementById("snackcalories").innerText=s;
@@ -160,4 +176,3 @@ async function getCalories(query){
         };
     }
 }
-
