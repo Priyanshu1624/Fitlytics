@@ -1,0 +1,128 @@
+.main{
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    
+}
+
+
+.addmeals{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    
+}
+
+
+.addmeal input,.addmeal select {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.addmeal input:focus,.addmeal select:focus{
+    border-color: #22c55e;
+    transition: 0.3s;
+}
+
+
+
+.addmeals button{
+    padding: 10px 15px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.addmeals button:hover{
+    background: #16a34a;
+}
+
+
+
+.summary{
+    margin: 0;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.summary p{
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #22c55e;
+}
+
+.mealsection{
+    margin-bottom: 30px;
+
+}
+
+.mealsection h2{
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.mealcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.mealcard{
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+
+}
+
+.mealcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+.mealcard strong{
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.delete{
+    margin-top: 10px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete:hover{
+    background: #dc2626;
+}
+
+#totalcalories{
+    color: #22c55e;
+}
+
+#totalprotein{
+    color: #3b82f6;
+}
+#totalcarbs{
+    color: #f59e0b;
+}
+
+#totalfats{
+    color: #ef4444;
+}

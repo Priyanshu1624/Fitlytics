@@ -1,0 +1,75 @@
+
+.main{
+    flex: 1;
+    padding: 25px;
+}
+
+.addworkout{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.addworkout input{
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+
+.addworkout button{
+    padding: 10px 15px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.addworkout button:hover{
+    background: #16a34a;
+}
+
+.summary{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.workoutcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.workoutcard{
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3px;
+
+}
+
+.workoutcard:hover{
+    transform: translateY(-5px);
+}
+
+.delete{
+    margin-top: 10px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete:hover{
+    background: #dc2626;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitlytics-Meals</title>
+    <link rel="stylesheet" href="Meals.css">
+    <link rel="stylesheet" href="../Shared/layout.css">
+</head>
+<body>
+
+
+    <div class="dashboard">
+        <div class=" sidebar">
+
+            <h2>Fitlytics</h2>
+
+            <ul>
+                <li id="dashboardbtn">Dashboard</li>
+                <li class="active" id="mealbtn">Meals</li>
+                <li id="workoutsbtn">Workouts</li>
+                <li >Progress</li>
+                <li id="logoutbtn">Logout</li>
+            </ul>
+
+        </div>
+
+        <div class="main">
+
+            <h1>Meals</h1>
+            <div class="addmeals">
+
+                <input type="text" id="food" placeholder="Dish Name (e.g. Rice)">
+                <input type="text" id="quantity" placeholder="Quantity (e.g. 200g)">
+                <select id="mealtime"> 
+
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Evening Snacks">Evening Snacks</option>
+                    <option value="Dinner">Dinner</option>
+                </select>
+                <button id="addmeals">Add Meal</button>
+            </div>
+
+            <!--Summary-->
+            <div class="summary">
+                <h2>Total Calories</h2>
+                <p id="totalcalories">Total Calories : 0 kcal</p>
+                <p id="totalprotein">Total Protein : 0 g</p>
+                <p id="totalcarbs">Total Carbohydrates : 0 g</p>
+                <p id="totalfats">Total Fats : 0 g</p>
+            </div>
+
+            <!--Sections-->
+            <div class="mealsection">
+                <h2>Breakfast(<span id="breakfastcalories">0</span> kcal)</h2>
+
+                <div id="breakfastcontainer" class="mealcontainer"></div>
+            </div>
+
+            <div class="mealsection">
+                <h2>Lunch(<span id="lunchcalories">0</span> kcal)</h2>
+
+                <div id="lunchcontainer" class="mealcontainer"></div>
+            </div>
+
+            <div class="mealsection">
+                <h2>Evening Snacks(<span id="snackcalories">0</span> kcal)</h2>
+
+                <div id="snackcontainer" class="mealcontainer"></div>
+            </div>
+
+            <div class="mealsection">
+                <h2>Dinner(<span id="dinnercalories">0</span> kcal)</h2>
+
+                <div id="dinnercontainer" class="mealcontainer"></div>
+            </div>
+        </div>
+    </div>
+    <script src="Meals.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../Shared/navigation.js"></script>
+</body>
+</html>
+
